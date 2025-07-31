@@ -5,6 +5,7 @@ namespace FinalVarlikCf.Data;
 
 
 
+
 public class MyDbContext : DbContext
 {
     /*
@@ -125,6 +126,31 @@ public class MyDbContext : DbContext
             .HasForeignKey(ct => ct.AssetId)
             .OnDelete(DeleteBehavior.Restrict);
 
+        //Bunu veritabanından da yapabilir miydik
+        modelBuilder.Entity<Asset>()
+        .HasIndex(a => a.Code)
+        .IsUnique();
+
+
+        modelBuilder.Entity<Asset>()
+            .HasIndex(a => a.SerialNumber)
+            .IsUnique(false); 
+
+        modelBuilder.Entity<Asset>()
+            .HasIndex(a => a.BarCode)
+            .IsUnique(false);
+
+      
+        modelBuilder.Entity<Asset>()
+            .HasIndex(a => a.KmoCode)
+            .IsUnique(false);
+
+        modelBuilder.Entity<Asset>()
+            .HasIndex(a => a.SapCode)
+            .IsUnique(false);
+
+
+
         base.OnModelCreating(modelBuilder);
 
     }
@@ -134,9 +160,17 @@ public class MyDbContext : DbContext
         optionsBuilder.UseSqlServer("Server=NA05920;Database=FinalVarlikCfDb;Trusted_Connection=True;TrustServerCertificate=True;");
     }
 
+    // neden bu kısma eklemiştik bunu ?
+
 
 
     //protected MyDbContext()
     //{
     //}
+
+    //DataAccess 
+    //--abstract
+    //--concrete
+
+
 }
