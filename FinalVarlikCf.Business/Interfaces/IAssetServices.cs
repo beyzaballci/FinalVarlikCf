@@ -10,7 +10,7 @@ namespace FinalVarlikCf.Business.Interfaces
 {
     public interface IAssetServices
     {
-
+//merhaba
         Task<IEnumerable<Asset>> GetAllAsync();
         Task<Asset> GetByIdAsync(int id);
         Task CreateAsync(Asset asset);
