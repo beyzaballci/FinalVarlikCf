@@ -35,4 +35,7 @@ public class AssetSlip
      public virtual Company Company { get; set; }
     public virtual ICollection<AssetTransaction> AssetTransactions { get; set; }
 
+
+    //public class Customer : IEntitys
+
 }

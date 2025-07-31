@@ -7,6 +7,7 @@ namespace FinalVarlikCf.Models
     public class Asset
     {
         [Key]
+        
         public int Id { get; set; }
 
         [Required]
@@ -99,6 +100,9 @@ namespace FinalVarlikCf.Models
         public virtual ICollection<AssetTransaction> AssetTransactions { get; set; }
 
 
+
+
+        //
 
 
 
